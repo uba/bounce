@@ -1,0 +1,125 @@
+body, html {
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #6e6e6e;
+}
+
+#game {
+  background: #111;
+  position: absolute;
+  display: none;
+  border: 1px solid #222222;
+  border-radius: 2px;
+  font-size: 16px;
+  color: #f4f4f4;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px #000;
+     -moz-box-shadow: 0 0 10px #000;
+       -o-box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #000;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#menu {
+  position: absolute;
+  display: none;
+  width: 320px;
+  height: 320px;
+}
+
+#menu h1 {
+  font-size: 38px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+#menu section {
+  display: none;
+  font-size: 14px;
+  padding: 4px;
+  width: 320px;
+  border-radius: 8px;
+}
+
+#menu h2 {
+  font-size: 16px;
+}
+
+#menu .welcome {
+  display: inline-block;
+}
+
+#score {
+  display: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#score p {
+  color: rgba(100,240,255);
+  font-size: 24px;
+}
+
+#highscore {
+  display: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#highscore p {
+  color: rgba(255, 255, 100);
+  font-size: 24px;
+}
+
+/* side by side div */
+.container {
+  display: flex;
+}
+
+.fixed {
+  width: 200px;
+}
+
+.flex-item {
+  flex-grow: 1;
+}
+
+.button {
+  box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  background-color:#768d87;
+  border-radius:5px;
+  border:1px solid #566963;
+  display:none;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:28px;
+  font-weight:bold;
+  padding:4px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #2b665e;
+}
+
+.button:hover {
+  background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  background-color:#6c7c7c;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+#soundButton {
+  display: inline-block;
+  padding: 4px;
+  margin: 4px;
+  width: 24px;
+  font-size:18px;
+}

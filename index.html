@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>bounce</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bounce Game.">
+    <meta name="author" content="Douglas Uba">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body scroll="no">
+    <div id="game">
+      <canvas id="canvas"></canvas>
+      <div id="menu">
+        <div><h1>b<small>⬤</small>unce</h1></div>
+        <div class="container">
+          <div id="score" class="flex-item">
+            <label>Score</label><b><p>0</p></b>
+          </div>
+          <div id="highscore" class="flex-item">
+            <label>🥇High Score</label><b><p>0</p></b>
+          </div>
+        </div>
+        <h2>Press 'ENTER' or touch to start.</h2>
+        <section class="welcome">
+          <div id="instructions">
+            <p align="justify">Avoid the enemies to keep the white ball bouncing. Use 🡄 and 🡆 keys to move.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <button id="leftButton" type="button" class="button">🡄</button>
+    <button id="rightButton" type="button" class="button">🡆</button>
+    <button id="soundButton" type="button" class="button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+   <script type="text/javascript" src="js/bounce.js"></script>
+  </body>
+</html>
