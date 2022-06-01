@@ -1,7 +1,7 @@
 /**
  * Encapsulates the main logic of the Bounce game.
  * @author Douglas Uba
- * Inspired by work of Hakim El Hattab (https://hakim.se/).
+ * Inspired by work of Hakim El Hattab (https://hakim.se/) and idea of Daniel Barral (UFJF).
  */
 var Bounce = (function() {
     // Fade effect for menu item
