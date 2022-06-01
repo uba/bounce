@@ -105,6 +105,7 @@ body, html {
   padding:4px;
   text-decoration:none;
   text-shadow:0px -1px 0px #2b665e;
+  outline: none;
 }
 
 .button:hover {
@@ -120,6 +121,6 @@ body, html {
   display: inline-block;
   padding: 4px;
   margin: 4px;
-  width: 24px;
+  width: 28px;
   font-size:18px;
 }

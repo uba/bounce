@@ -57,30 +57,25 @@ var Bounce = (function() {
     
     // Sounds Effects
     var sfx = {
-        dead: new Howl({
-            src: ['assets/dead.mp3'],
-            autoplay: false,
-        }),
-        ping: new Howl({
-            src: ['assets/ping.mp3'],
-            autoplay: false,
-        }),
-        bounce: new Howl({
-            src: ['assets/bounce.mp3'],
-            autoplay: false
-        }),
         intro: new Howl({
             src: ['assets/intro.mp3'],
             autoplay: true,
             loop: true
         }),
+        dead: new Howl({
+            src: ['assets/dead.mp3']
+        }),
+        ping: new Howl({
+            src: ['assets/ping.mp3']
+        }),
+        bounce: new Howl({
+            src: ['assets/bounce.mp3']
+        }),
         start: new Howl({
-            src: ['assets/start.wav'],
-            autoplay: false
+            src: ['assets/start.wav']
         }),
         background: new Howl({
             src: ['assets/background.mp3'],
-            autoplay: false,
             loop: true
         })
     };
@@ -98,6 +93,19 @@ var Bounce = (function() {
             '<i class="fa fa-volume-off" aria-hidden="true"></i>';
     });
     
+    function load() {
+        var sounds = 0;
+        for(let sound in sfx) {
+            sfx[sound].once('load', function() {
+                sounds++;
+                if(sounds == Object.keys(sfx).length) {
+                    initialize();
+                }
+                
+            });
+        }
+    }
+
     function initialize() {
          // Run selectors and cache elements references
          game = $('#game');
@@ -149,7 +157,7 @@ var Bounce = (function() {
             // Binding listeners
             document.addEventListener('keydown', onKeyDown, false);
             document.addEventListener('keyup', onKeyUp, false);
-            canvas.addEventListener('touchstart', onCanvasTouchStartHandler, false);
+            menu.on('touchstart', start);
             window.addEventListener('resize', onWindowResizeHandler, false);
 
             game.fadeIn(MENU_FADE_IN_DURATION);
@@ -162,6 +170,7 @@ var Bounce = (function() {
     }
 
     function start() {
+        if(playing) return;
         reset();
         // Sound-effects
         sfx.intro.stop();
@@ -465,7 +474,7 @@ var Bounce = (function() {
                 display: 'inline-block',
                 position: 'absolute',
                 left: cx,
-                top: window.innerHeight - cy + 4,
+                top: window.innerHeight - cy + 24,
                 height: (window.innerHeight - canvas.height) * 0.3,
                 width: canvas.width * 0.5
             });
@@ -474,14 +483,14 @@ var Bounce = (function() {
                 display: 'inline-block',
                 position: 'absolute',
                 left: cx + canvas.width * 0.5,
-                top: window.innerHeight - cy + 4,
+                top: window.innerHeight - cy + 24,
                 height: (window.innerHeight - canvas.height) * 0.3,
                 width: canvas.width * 0.5
             });
         }
     }
 
-    window.onload = initialize;
+    window.onload = load;
 })();
 
 /**
