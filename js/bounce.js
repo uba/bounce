@@ -94,11 +94,13 @@ var Bounce = (function() {
     });
     
     function load() {
+        loading(true);
         var sounds = 0;
         for(let sound in sfx) {
             sfx[sound].once('load', function() {
                 sounds++;
                 if(sounds == Object.keys(sfx).length) {
+                    loading(false);
                     initialize();
                 }
                 
@@ -455,7 +457,7 @@ var Bounce = (function() {
         // Determine the x/y position of the canvas
         var cx = Math.max((window.innerWidth - world.width) * 0.5, 1);
         var cy = Math.max((window.innerHeight - world.height) * 0.5, 1);
-
+        
         // Update the position of the canvas
         game.css({
             left: cx,
@@ -474,8 +476,8 @@ var Bounce = (function() {
                 display: 'inline-block',
                 position: 'absolute',
                 left: cx,
-                top: window.innerHeight - cy + 24,
-                height: (window.innerHeight - canvas.height) * 0.3,
+                top: window.innerHeight - cy,
+                height: (window.innerHeight - canvas.height) * 0.5,
                 width: canvas.width * 0.5
             });
     
@@ -483,11 +485,22 @@ var Bounce = (function() {
                 display: 'inline-block',
                 position: 'absolute',
                 left: cx + canvas.width * 0.5,
-                top: window.innerHeight - cy + 24,
-                height: (window.innerHeight - canvas.height) * 0.3,
+                top: window.innerHeight - cy,
+                height: (window.innerHeight - canvas.height) * 0.5,
                 width: canvas.width * 0.5
             });
         }
+    }
+
+    function loading(status) {
+        if(status == true)
+            $('#loader').css({
+                display: 'inline-block',
+                top: window.innerHeight * 0.5 - ($('#loader').height() * 0.5),
+                left: window.innerWidth * 0.5 - ($('#loader').width() * 0.5)
+            });
+        else
+            $('#loader').css({ display: 'none' });
     }
 
     window.onload = load;
