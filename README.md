@@ -9,7 +9,7 @@ Play ➡️ <a href="https://uba.github.io/bounce" target="_blank">here!</a>
 
 https://github.com/user-attachments/assets/ff8c8392-756e-402e-b16d-6a91ef57f1b2
 
-# ChatGPT description based on the [bounce.js](src/bounce.js) code
+# ChatGPT description based on the [bounce.js](js/bounce.js) code
 
 This JavaScript code defines the main logic of a browser-based game called **Bounce**.
 
